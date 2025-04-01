@@ -1,0 +1,21 @@
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: zidv2hpqs-go-gitops
+  description: This is GitOps manifest for zidv2hpqs-go   
+  links:
+    - url: https://www.redhat.com/en/solutions/trusted-software-supply-chain
+      title: Trusted Secure Supply Chain 
+      icon: dashboard
+      type: admin-dashboard
+  annotations:    
+    argocd/app-selector: rhtap/gitops=zidv2hpqs-go
+    backstage.io/kubernetes-id: zidv2hpqs-go 
+    backstage.io/techdocs-ref: dir:. 
+    janus-idp.io/tekton: zidv2hpqs-go
+spec:
+  type: gitops
+  owner: user:guest 
+  lifecycle: experimental
+  dependsOn:
+    - component:zidv2hpqs-go
